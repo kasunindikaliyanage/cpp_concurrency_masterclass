@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <future>
 
-
 template<typename T>
 std::list<T> parallel_quick_sort(std::list<T> input)
 {

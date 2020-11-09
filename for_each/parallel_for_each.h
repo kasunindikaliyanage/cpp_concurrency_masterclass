@@ -6,6 +6,7 @@
 
 #include "common_objs.h"
 
+
 /* This is the parallel version of for_each function implmentation with package tasks and futures */
 template<typename Iterator, typename Func>
 void parallel_for_each_pt( Iterator first, Iterator last, Func f )

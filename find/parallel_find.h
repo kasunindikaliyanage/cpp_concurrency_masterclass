@@ -7,6 +7,7 @@
 
 #include "common_objs.h"
 
+
 template<typename Iterator, typename MatchType>
 Iterator parallel_find_pt(Iterator first, Iterator last, MatchType match)
 {
@@ -55,10 +56,13 @@ Iterator parallel_find_pt(Iterator first, Iterator last, MatchType match)
 	/*	Declare the needed data structures	*/
 	std::promise<Iterator> result;
 	std::atomic<bool> done_flag(false);
+
 	std::vector<std::thread> threads(num_threads - 1);
+
 	{
 		join_threads joiner(threads);
 
+		// task dividing loop
 		Iterator block_start = first;
 		for (unsigned long i = 0; i < (num_threads - 1); i++)
 		{
