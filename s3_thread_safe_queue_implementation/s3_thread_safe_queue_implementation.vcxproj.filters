@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="thread_safe_stack.h">
+    <ClInclude Include="thread_safe_queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

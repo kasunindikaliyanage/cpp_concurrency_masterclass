@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7383f2cd-c2e9-4810-8598-bab1515013f4}</ProjectGuid>
-    <RootNamespace>s2mutex</RootNamespace>
+    <ProjectGuid>{cc4dae81-5453-4f2f-a046-461f81b40cd4}</ProjectGuid>
+    <RootNamespace>s3asynctaskdetaildiscussion</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
