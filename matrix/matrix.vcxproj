@@ -23,6 +23,7 @@
     <ProjectGuid>{E2BB3B18-7083-4CF8-8322-E9BD4BF91546}</ProjectGuid>
     <RootNamespace>matrix</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>s4_parallel_matrix</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

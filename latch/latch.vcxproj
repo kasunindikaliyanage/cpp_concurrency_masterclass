@@ -23,6 +23,7 @@
     <ProjectGuid>{BB74459F-5FAE-44FD-9C85-79D2C5B2B003}</ProjectGuid>
     <RootNamespace>latch</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>s5_latch</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

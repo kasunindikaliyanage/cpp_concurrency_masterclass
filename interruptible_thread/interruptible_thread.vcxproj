@@ -23,7 +23,7 @@
     <ProjectGuid>{3BA4164A-8165-403A-83C2-C1A6B4D5E2C0}</ProjectGuid>
     <RootNamespace>interruptiblethread</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>jthread</ProjectName>
+    <ProjectName>s5_jthread</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -23,7 +23,7 @@
     <ProjectGuid>{79555DD8-2BAE-461F-8D05-6B88DBE18C25}</ProjectGuid>
     <RootNamespace>HashTableX</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>lock_free_hashtable</ProjectName>
+    <ProjectName>s7_lock_free_hashtable</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

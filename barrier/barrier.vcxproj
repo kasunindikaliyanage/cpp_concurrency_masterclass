@@ -23,6 +23,7 @@
     <ProjectGuid>{16AF7CDA-5BA5-4053-93D4-8CE5F8B27F05}</ProjectGuid>
     <RootNamespace>barrier</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>s5_barriers</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

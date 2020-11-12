@@ -23,6 +23,7 @@
     <ProjectGuid>{288CE20B-9C5C-498C-AAAB-824B49CD712A}</ProjectGuid>
     <RootNamespace>lockfreelinkedlist</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>s7_lockfree_linkedlist</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -23,6 +23,7 @@
     <ProjectGuid>{42A39E13-B493-439A-A4B8-28B56DB373EC}</ProjectGuid>
     <RootNamespace>coroutines</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>s5_coroutines</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -23,6 +23,7 @@
     <ProjectGuid>{4685E98B-75F6-46F1-9890-75A776D7CBD6}</ProjectGuid>
     <RootNamespace>find</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>s4_parallel_find</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

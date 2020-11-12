@@ -23,6 +23,7 @@
     <ProjectGuid>{CAA83B89-8B25-49AA-B383-D1E4EE3BCD95}</ProjectGuid>
     <RootNamespace>sort</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>s4_parallel_quick_sort</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -23,6 +23,7 @@
     <ProjectGuid>{9CE7C93E-9E88-464B-AE33-017D62361375}</ProjectGuid>
     <RootNamespace>foreach</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>s4_parallel_for_each</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
