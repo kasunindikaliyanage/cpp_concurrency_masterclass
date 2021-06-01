@@ -22,7 +22,7 @@ public:
 	void withdraw(double amount)
 	{
 		std::lock_guard<std::mutex> lg(m);
-		balance += amount;
+		balance -= amount;
 	}
 
 	void deposite(double amount)
