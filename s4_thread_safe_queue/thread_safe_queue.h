@@ -23,7 +23,7 @@ class sequential_queue1 {
 	std::unique_ptr<node> head;
 	node* tail;
 
-public:
+	public:
 	void push(T value)
 	{
 		std::unique_ptr<node> new_node(new node(std::move(value)));
@@ -73,7 +73,7 @@ class sequential_queue2 {
 	std::mutex head_mutex;
 	std::mutex tail_mutex;
 
-public:
+	public:
 	void push(T value)
 	{
 		std::unique_ptr<node> new_node(new node(std::move(value)));
@@ -124,7 +124,7 @@ class sequential_queue3 {
 	std::unique_ptr<node> head;
 	node* tail;
 
-public:
+	public:
 	sequential_queue3() :head(new node), tail(head.get())
 	{}
 
@@ -199,15 +199,15 @@ class sequential_queue4 {
 	{
 		std::unique_lock<std::mutex> lock(head_mutex);
 		cv.wait(lock, [&]
-			{
-				return head.get() != get_tail();
-			});
+		{
+			return head.get() != get_tail();
+		});
 		std::unique_ptr<node> const old_head = std::move(head);
 		head = std::move(old_head->next);
 		return old_head;
 	}
 
-public:
+	public:
 	sequential_queue4() :head(new node), tail(head.get())
 	{}
 
@@ -273,17 +273,26 @@ class sequential_queue5 {
 
 	std::unique_ptr<node> wait_pop_head()
 	{
+		//? protect head node with mutex and unique_lock
 		std::unique_lock<std::mutex> lock(head_mutex);
-		cv.wait(lock, [&]
-			{
-				return head.get() != get_tail();
-			});
-		std::unique_ptr<node> const old_head = std::move(head);
+
+		//? Need to wait for the condion variable
+		//* (maybe someone pushing to the queue at the moment)
+		//? and also check if there is something in the queue
+		//* (head.get() == get_tail()) - when head and tail points to the dummy node
+		//! do we stick in the loop until one element will appear in the queue?
+		//! do we need this?
+		head_condition.wait(lock, [&] { return head.get() != get_tail(); });
+
+		//! 'const' cast issue here, remvoe const (copy ellision won't work on const)
+		// std::unique_ptr<node> const old_head = std::move(head);
+		std::unique_ptr<node> old_head = std::move(head);
+
 		head = std::move(old_head->next);
-		return old_head;
+		return old_head;	//! be carefull, non const variable needed to allow copy ellision
 	}
 
-public:
+	public:
 	sequential_queue5() :head(new node), tail(head.get())
 	{}
 
@@ -317,7 +326,33 @@ public:
 
 	std::shared_ptr<T> wait_pop()
 	{
-		std::unique_lock<node> old_head = wait_pop_head();
+		//! std::unique_ptr and not std::unique_lock
+		std::unique_ptr<node> old_head = wait_pop_head();	 //! no need std::move() because of copy ellision
 		return old_head ? old_head->data : std::shared_ptr<T>();
 	}
+
+	// Printer method: prints cells from top to bottom
+	void printData();
 };
+
+template <typename T>
+inline void sequential_queue5<T>::printData()
+{
+	if (head.get() == get_tail())
+	{
+		std::cout << "Queue is empty...\n";
+		return;
+	}
+
+	std::lock_guard<std::mutex> hlg(head_mutex);
+
+	node* current = head.get();
+	std::cout << "Queue from top to bottom...\n";
+	int index{};
+	while (current->data != nullptr)
+	{
+		std::cout << "current: " << current << ", value [" << index++ << "]: " << *(current->data) << std::endl;
+		current = (current->next).get();
+	}
+	std::cout << "End of the queue...\n";
+}
