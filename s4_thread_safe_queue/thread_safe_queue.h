@@ -282,7 +282,7 @@ class sequential_queue5 {
 		//* (head.get() == get_tail()) - when head and tail points to the dummy node
 		//! do we stick in the loop until one element will appear in the queue?
 		//! do we need this?
-		head_condition.wait(lock, [&] { return head.get() != get_tail(); });
+		cv.wait(lock, [&] { return head.get() != get_tail(); });
 
 		//! 'const' cast issue here, remvoe const (copy ellision won't work on const)
 		// std::unique_ptr<node> const old_head = std::move(head);
