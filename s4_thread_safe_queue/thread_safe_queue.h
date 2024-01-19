@@ -49,6 +49,9 @@ class sequential_queue1 {
 		std::shared_ptr<T> const res(std::make_shared<T>(std::move(head->data)));
 		std::unique_ptr<node> const old_head = std::move(head);
 		head = std::move(old_head->next);
+		if(!head) {
+			tail = nullptr;
+		}
 		return res;
 	}
 };
